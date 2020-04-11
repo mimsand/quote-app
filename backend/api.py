@@ -11,14 +11,14 @@ try:
 except:
     ipaddr = '0.0.0.0'
 
+#Establish connection with quotation database
+dynamodb = boto3.resource('dynamodb', region_name='eu-central-1')
+
 app = Flask(__name__)
 CORS(app)
 
 @app.route('/quote')
 def get_random_quote():
-
-    #Establish connection with quotation database
-    dynamodb = boto3.resource('dynamodb', region_name='eu-central-1')
 
     #Error message (as quotation) if something fails
     quote = 'Everything fails all the time. '
@@ -41,6 +41,9 @@ def get_random_quote():
         quote = quote + '[quotation database not found!]'
     else:
         quote = quote + '[no quotes found in database!]'
+
+    # set parameter defaults
+    sentiment = 'neutral'
     
     # return json object (flask automatically jsonify) with quotation details
-    return {'quote': quote, 'author': author, 'serverip': ipaddr}
+    return {'quote': quote, 'author': author, 'sentiment': sentiment, 'serverip': ipaddr}
