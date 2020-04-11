@@ -12,7 +12,7 @@ except:
     ipaddr = '0.0.0.0'
 
 #Establish connection with quotation database
-dynamodb = boto3.resource('dynamodb', region_name='eu-central-1')
+dynamodb = boto3.resource('dynamodb', region_name='us-east-1')
 
 app = Flask(__name__)
 CORS(app)
