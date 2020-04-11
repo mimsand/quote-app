@@ -27,7 +27,13 @@ function App() {
       <header className="App-header">
 	<p>
           <img src={quoteStart} className="img-quote" alt="quote" />
-	  <font className="font-quote"> {apiData[0]} </font> 
+	  <font className="font-quote"> 
+	  {apiData[0] ? (
+	     <font className="font-quote">{apiData[0]}</font>
+	  ) : (
+	     <font className="font-quote-err">Everything fails all the time. NO DATA FROM BACKEND!&nbsp; ({apiUrl})</font>
+	  )}
+	  </font> 
           <font className="font-author">&nbsp;-&nbsp;{apiData[1]}</font>
           <img src={quoteStop} className="img-quote" alt="quote" />
 	</p>

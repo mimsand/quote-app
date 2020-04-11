@@ -34,6 +34,14 @@
   font-weight: bold;
   color: #cccccc;
 }
+
+.font-quote-err{
+  font-size: large;
+  font-style: italic;
+  font-weight: bold;
+  color: #cccccc;
+}
+
 .font-author{
   font-size: medium;
   color: #000000;
