@@ -6,7 +6,8 @@ After=network.target
 Type=forking
 WorkingDirectory=/home/ec2-user/quote-app/backend/
 ExecStart=/home/ec2-user/quote-app/backend/run_flask 
-TimeoutStartSec=infinity
+TimeoutStartSec=3600
            
 [Install]
 WantedBy=default.target
+
