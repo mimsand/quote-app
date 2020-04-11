@@ -1,0 +1,11 @@
+[Unit]
+Description=Flask Backend Service for quotation API
+After=network.target
+           
+[Service]
+Type=forking
+WorkingDirectory=/home/ec2-user/quote-app/backend/
+ExecStart=/home/ec2-user/quote-app/backend/run_flask 
+           
+[Install]
+WantedBy=default.target
